@@ -21,7 +21,7 @@ public class CCFInstance {
         return new CCFInstance();
     }
 
-    public static CCFInstance open(CCFHeader header, CCFGenerator generator) {
+    public static CCFInstance create(CCFHeader header, CCFGenerator generator) {
         return new CCFInstance();
     }
 

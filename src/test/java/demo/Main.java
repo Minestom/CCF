@@ -1,9 +1,6 @@
 package demo;
 
-import net.minestom.ccf.CCFAbstraction;
-import net.minestom.ccf.CCFGenerator;
-import net.minestom.ccf.CCFInstance;
-import net.minestom.ccf.CCFRenderPass;
+import net.minestom.ccf.*;
 import net.minestom.ccf.command.CCFCommandBuffer;
 import net.minestom.ccf.command.type.CCFCuboidCommand;
 
@@ -50,6 +47,19 @@ public class Main {
             instance.execute(commandBuffer, 0, 0, 0);
         }
 
+    }
+
+    private static void fromHeader() {
+
+        // Allow to create a CCFInstance from an header only.
+        // Useful if you want to execute commands without having a world file
+
+        CCFHeader header = new CCFHeader();
+        header.createAbstraction("chunk", "An amazing chunk", 16, 256, 16);
+        header.createRenderPass("blocks", "Amazing blocks", 2);
+
+        CCFGenerator generator = new GeneratorImpl();
+        CCFInstance instance = CCFInstance.create(header, generator);
     }
 
 }
