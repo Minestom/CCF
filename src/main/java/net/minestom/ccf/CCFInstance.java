@@ -14,17 +14,25 @@ public class CCFInstance {
 
     }
 
-    public static CCFInstance load(File file) {
+    public static CCFInstance open(File file, CCFGenerator generator) {
         // TODO read header
         return new CCFInstance();
     }
 
-    public static CCFInstance load(CCFHeader header) {
+    public static CCFInstance open(CCFHeader header, CCFGenerator generator) {
         return new CCFInstance();
     }
 
     public void execute(CCFAbstraction abstraction, long posX, long posY, long posZ, byte[] commands) {
+        // Execute arbitrary commands
+    }
 
+    public void load(CCFAbstraction abstraction, long posX, long posY, long posZ) {
+        // Load from file
+    }
+
+    public CCFAbstraction getAbstraction(String name){
+        return null;
     }
 
     public List<CCFAbstraction> getAbstractions() {
