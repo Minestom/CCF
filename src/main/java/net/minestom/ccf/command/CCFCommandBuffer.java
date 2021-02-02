@@ -1,16 +1,16 @@
 package net.minestom.ccf.command;
 
 import net.minestom.ccf.CCFAbstraction;
-import net.minestom.ccf.CCFRenderPass;
+import net.minestom.ccf.CCFLayer;
 
 public class CCFCommandBuffer {
 
     private final CCFAbstraction abstraction;
-    private final CCFRenderPass renderPass;
+    private final CCFLayer layer;
 
-    public CCFCommandBuffer(CCFAbstraction abstraction, CCFRenderPass renderPass) {
+    public CCFCommandBuffer(CCFAbstraction abstraction, CCFLayer layer) {
         this.abstraction = abstraction;
-        this.renderPass = renderPass;
+        this.layer = layer;
     }
 
     public void append(CCFCommand command) {
@@ -21,7 +21,7 @@ public class CCFCommandBuffer {
         return abstraction;
     }
 
-    public CCFRenderPass getRenderPass() {
-        return renderPass;
+    public CCFLayer getlayer() {
+        return layer;
     }
 }

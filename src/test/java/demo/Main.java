@@ -16,8 +16,8 @@ public class Main {
             System.out.println("Abstraction name: " + abstraction.getName());
         }
 
-        for (CCFRenderPass renderPass : instance.getRenderPasses()) {
-            System.out.println("Render pass name: " + renderPass.getName());
+        for (CCFLayer layer : instance.getLayers()) {
+            System.out.println("Render pass name: " + layer.getName());
         }
 
         {
@@ -33,7 +33,7 @@ public class Main {
             // In this case the buffer interacts with a "chunk" and affects the "blocks" render pass
             CCFCommandBuffer commandBuffer = new CCFCommandBuffer(
                     instance.getAbstraction("chunk"),
-                    instance.getRenderPass("blocks"));
+                    instance.getLayer("blocks"));
 
             CCFCuboidCommand cuboidCommand = new CCFCuboidCommand();
             cuboidCommand.endX = 5;
@@ -50,14 +50,14 @@ public class Main {
         {
             CCFCommandBuffer commandBuffer = new CCFCommandBuffer(
                     instance.getAbstraction("chunk"),
-                    instance.getRenderPass("blocks"));
+                    instance.getLayer("blocks"));
             CCFEncoder<byte[]> encoder = null;
             byte[] chunkData = new byte[]{0, 0, 0, 0};
 
             // Fill the command buffer given the encoder and the data to encode
             instance.fill(commandBuffer, encoder, chunkData);
-            // After getting the buffer, save it to file
-            instance.save(commandBuffer, 0, 0, 0);
+            // After getting the buffer, save it to file (chunk[1;0;0])
+            instance.save(commandBuffer, 1, 0, 0);
         }
 
     }
@@ -69,7 +69,7 @@ public class Main {
 
         CCFHeader header = new CCFHeader();
         header.createAbstraction("chunk", "An amazing chunk", 16, 256, 16);
-        header.createRenderPass("blocks", "Amazing blocks", 2);
+        header.createLayer("blocks", "Amazing blocks", 2);
 
         CCFGenerator generator = new GeneratorImpl();
         CCFInstance instance = CCFInstance.create(header, generator);

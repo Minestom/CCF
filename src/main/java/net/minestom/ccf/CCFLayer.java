@@ -1,12 +1,12 @@
 package net.minestom.ccf;
 
-public class CCFRenderPass {
+public class CCFLayer {
 
     private final String name;
     private final String description;
     private final int dataSize;
 
-    protected CCFRenderPass(String name, String description, int dataSize) {
+    protected CCFLayer(String name, String description, int dataSize) {
         this.name = name;
         this.description = description;
         this.dataSize = dataSize;

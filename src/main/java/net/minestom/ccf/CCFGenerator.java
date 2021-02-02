@@ -5,6 +5,6 @@ package net.minestom.ccf;
  */
 public interface CCFGenerator {
 
-    void read(CCFAbstraction abstraction, CCFRenderPass renderPass, long x, long y, long z, byte[] data);
+    void read(CCFAbstraction abstraction, CCFLayer layer, long x, long y, long z, byte[] data);
 
 }

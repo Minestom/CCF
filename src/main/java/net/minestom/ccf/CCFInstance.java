@@ -10,7 +10,7 @@ import java.util.List;
 public class CCFInstance {
 
     private final List<CCFAbstraction> abstractions = new ArrayList<>();
-    private final List<CCFRenderPass> renderPasses = new ArrayList<>();
+    private final List<CCFLayer> layers = new ArrayList<>();
 
     private CCFInstance() {
 
@@ -47,7 +47,7 @@ public class CCFInstance {
         return null;
     }
 
-    public CCFRenderPass getRenderPass(String name) {
+    public CCFLayer getLayer(String name) {
         return null;
     }
 
@@ -55,7 +55,7 @@ public class CCFInstance {
         return Collections.unmodifiableList(abstractions);
     }
 
-    public List<CCFRenderPass> getRenderPasses() {
-        return Collections.unmodifiableList(renderPasses);
+    public List<CCFLayer> getLayers() {
+        return Collections.unmodifiableList(layers);
     }
 }
