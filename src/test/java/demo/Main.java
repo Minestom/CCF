@@ -33,13 +33,16 @@ public class Main {
 
         {
             // A command buffer can contain a list of commands ready to be executed
-            // In this case the buffer interacts with a "chunk"
-            CCFCommandBuffer commandBuffer = new CCFCommandBuffer(instance.getAbstraction("chunk"));
+            // In this case the buffer interacts with a "chunk" and affects the "blocks" render pass
+            CCFCommandBuffer commandBuffer = new CCFCommandBuffer(
+                    instance.getAbstraction("chunk"),
+                    instance.getRenderPass("blocks"));
 
             CCFCuboidCommand cuboidCommand = new CCFCuboidCommand();
             cuboidCommand.endX = 5;
             cuboidCommand.endY = 16;
             cuboidCommand.endZ = 5;
+            cuboidCommand.data = new byte[]{0, 1};
 
             commandBuffer.append(cuboidCommand);
 
