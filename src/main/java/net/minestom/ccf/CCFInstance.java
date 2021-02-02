@@ -1,5 +1,7 @@
 package net.minestom.ccf;
 
+import net.minestom.ccf.command.CCFCommandBuffer;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,15 +25,21 @@ public class CCFInstance {
         return new CCFInstance();
     }
 
-    public void execute(CCFAbstraction abstraction, long posX, long posY, long posZ, byte[] commands) {
+    public void execute(CCFCommandBuffer commandBuffer,
+                        long posX, long posY, long posZ) {
         // Execute arbitrary commands
     }
 
-    public void load(CCFAbstraction abstraction, long posX, long posY, long posZ) {
+    public void load(CCFAbstraction abstraction,
+                     long posX, long posY, long posZ) {
         // Load from file
     }
 
-    public CCFAbstraction getAbstraction(String name){
+    public CCFAbstraction getAbstraction(String name) {
+        return null;
+    }
+
+    public CCFRenderPass getRenderPass(String name) {
         return null;
     }
 
