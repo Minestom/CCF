@@ -58,6 +58,11 @@ public class Main {
             instance.fill(commandBuffer, encoder, chunkData);
             // After getting the buffer, save it to file (chunk[1;0;0])
             instance.save(commandBuffer, 1, 0, 0);
+
+            // Append the buffer to the current chunk layer
+            // Useful if you just want to apply some modifications to an element without
+            // Having to re-encode it entirely
+            // instance.appendSave(commandBuffer, 1, 0, 0);
         }
 
     }

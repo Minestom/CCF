@@ -43,6 +43,10 @@ public class CCFInstance {
 
     }
 
+    public void appendSave(CCFCommandBuffer commandBuffer, long posX, long posY, long posZ) {
+
+    }
+
     public CCFAbstraction getAbstraction(String name) {
         return null;
     }
