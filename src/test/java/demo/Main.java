@@ -61,7 +61,7 @@ public class Main {
 
             // Append the buffer to the current chunk layer
             // Useful if you just want to apply some modifications to an element without
-            // Having to re-encode it entirely
+            // having to re-encode it entirely
             // instance.appendSave(commandBuffer, 1, 0, 0);
         }
 
@@ -73,8 +73,8 @@ public class Main {
         // Useful if you want to execute commands without having a world file
 
         CCFHeader header = new CCFHeader();
-        header.createAbstraction("chunk", "An amazing chunk", 16, 256, 16);
-        header.createLayer("blocks", "Amazing blocks", 2);
+        header.declareAbstraction("chunk", "An amazing chunk", 16, 256, 16);
+        header.declareLayer("blocks", "Amazing blocks", 2);
 
         CCFGenerator generator = new GeneratorImpl();
         CCFInstance instance = CCFInstance.create(header, generator);
