@@ -35,6 +35,14 @@ public class CCFInstance {
         // Load from file
     }
 
+    public <T> void fill(CCFCommandBuffer commandBuffer, CCFEncoder<T> encoder, T data) {
+        encoder.encode(data, commandBuffer);
+    }
+
+    public void save(CCFCommandBuffer commandBuffer, long posX, long posY, long posZ) {
+
+    }
+
     public CCFAbstraction getAbstraction(String name) {
         return null;
     }

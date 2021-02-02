@@ -5,12 +5,23 @@ import net.minestom.ccf.CCFRenderPass;
 
 public class CCFCommandBuffer {
 
-    public CCFCommandBuffer(CCFAbstraction abstraction, CCFRenderPass renderPass){
+    private final CCFAbstraction abstraction;
+    private final CCFRenderPass renderPass;
+
+    public CCFCommandBuffer(CCFAbstraction abstraction, CCFRenderPass renderPass) {
+        this.abstraction = abstraction;
+        this.renderPass = renderPass;
+    }
+
+    public void append(CCFCommand command) {
 
     }
 
-    public void append(CCFCommand command){
-
+    public CCFAbstraction getAbstraction() {
+        return abstraction;
     }
 
+    public CCFRenderPass getRenderPass() {
+        return renderPass;
+    }
 }

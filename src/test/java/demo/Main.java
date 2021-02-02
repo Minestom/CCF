@@ -47,6 +47,19 @@ public class Main {
             instance.execute(commandBuffer, 0, 0, 0);
         }
 
+        {
+            CCFCommandBuffer commandBuffer = new CCFCommandBuffer(
+                    instance.getAbstraction("chunk"),
+                    instance.getRenderPass("blocks"));
+            CCFEncoder<byte[]> encoder = null;
+            byte[] chunkData = new byte[]{0, 0, 0, 0};
+
+            // Fill the command buffer given the encoder and the data to encode
+            instance.fill(commandBuffer, encoder, chunkData);
+            // After getting the buffer, save it to file
+            instance.save(commandBuffer, 0, 0, 0);
+        }
+
     }
 
     private static void fromHeader() {
